@@ -35,10 +35,27 @@
           </div>
       </div>
       <div class="card-body">
-          <form method="post" role="form" th:action="@{/ticket-submission/save}" th:object="${Tickets}" >
+                    <form method="post" role="form" th:action="@{/ticket-submission/save}" th:object="${Tickets}" >
 			<div class="form-group mb-3">
               <input class="form-control" id="ticketNumber" name="ticketNumber" th:field="*{ticketNumber}" type="hidden" />
             </div>  
+            <p><b>Faculty Info</b></p>
+				  <div class="form-group mb-3">
+	              <label class="form-label">First Name</label>
+	              <input class="form-control" id="firstName" name="firstName" placeholder="Enter first name" th:field="*{firstName}" type="text" />
+	              <p th:errors = "*{firstName}" class="text-danger" th:if="${#fields.hasErrors('firstName')}"></p>
+	              </div>
+	              
+	              <div class="form-group mb-3">
+	              <label class="form-label">Last Name</label>
+	              <input class="form-control" id="lastName" name="lastName" placeholder="Enter last name" th:field="*{lastName}" type="text" />
+	              <p th:errors = "*{lastName}" class="text-danger" th:if="${#fields.hasErrors('lastName')}"></p>
+            	  </div>  
+            	  <div class="form-group mb-3">
+	              <label class="form-label">email</label>
+	              <input class="form-control" id="email" name="email" placeholder="Enter your email" th:field="*{email}" type="email" />
+	              <p th:errors = "*{email}" class="text-danger" th:if="${#fields.hasErrors('email')}"></p>
+            	  </div>  
             <div class="form-group mb-3">
               <label class="form-label">Room Number</label>
               <select th:field="*{roomNumber}" class="form-control" id="roomNumber" name="roomNumber">
@@ -81,35 +98,17 @@
 			  </select>
               <p th:errors = "*{roomNumber}" class="text-danger" th:if="${#fields.hasErrors('roomNumber')}"></p>
             </div>
-                        <div class="form-group mb-3">
-              <label class="form-label">Category</label>
-              <select th:field="*{category}" class="form-control" id="category" name="category">
-				  <option th:value="Projector" th:text="Projector issue"></option>
-				  <option th:value="PC/Monitor" th:text="PC/Monitor issue"></option>
-				  <option th:value="Printer" th:text="Printer issue"></option>
-				  <option th:value="Software" th:text="Software install issue"></option>
-				  <option th:value="Network" th:text="Network connection issue"></option>
-				  <option th:value="Others" th:text="Others"></option>
-			  </select>
-              <p th:errors = "*{category}" class="text-danger" th:if="${#fields.hasErrors('category')}"></p>
-            </div>
+            <div class="form-group mb-3">
+				<label class="form-label">Date problem was observed</label>
+              <input class="form-control" id="date" name="date" th:field="*{date}" type="date" />
+              <p th:errors = "*{date}" class="text-danger" th:if="${#fields.hasErrors('date')}"></p>
+			</div>            
             <div class="form-group mb-3">
               <label class="form-label">Description of Problem or Request</label>
               <input class="form-control" id="description" name="description" placeholder="Enter the description of problem or request" th:field="*{description}" type="text" />
               <p th:errors = "*{description}" class="text-danger" th:if="${#fields.hasErrors('description')}"></p>
             </div>
-			  <p><b>Faculty Info</b></p>
-				  <div class="form-group mb-3">
-	              <label class="form-label">First Name</label>
-	              <input class="form-control" id="firstName" name="firstName" placeholder="Enter first name" th:field="*{firstName}" type="text" />
-	              <p th:errors = "*{firstName}" class="text-danger" th:if="${#fields.hasErrors('firstName')}"></p>
-	              </div>
-	              
-	              <div class="form-group mb-3">
-	              <label class="form-label">Last Name</label>
-	              <input class="form-control" id="lastName" name="lastName" placeholder="Enter last name" th:field="*{lastName}" type="text" />
-	              <p th:errors = "*{lastName}" class="text-danger" th:if="${#fields.hasErrors('lastName')}"></p>
-            	  </div>  
+
             <div class="form-group mb-3">
               <input class="form-control" id="status" name="status" th:field="*{status}" type="hidden" th:value="Created"/>
             </div>
