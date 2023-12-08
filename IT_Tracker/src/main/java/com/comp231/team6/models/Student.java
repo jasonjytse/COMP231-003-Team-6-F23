@@ -2,6 +2,7 @@ package com.comp231.team6.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -12,7 +13,8 @@ public class Student {
 
 	@Id
 	@Column(name = "studentnumber")
-	private String studentNumber;
+	@GeneratedValue
+	private int studentNumber;
 
 	@Column(name = "password")
 	private String password;
@@ -25,23 +27,25 @@ public class Student {
 	@Column(name = "lastname")
 	private String lastName;
 
-	@NotBlank
 	@Column(name = "program")
 	private Program program;
 
-	public Student(String firstName, String lastName, String studentNumber, Program program) {
+
+	public Student() {
+	}
+	public Student(String firstName, String lastName, int studentNumber, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.studentNumber = studentNumber;
-		this.program = program;
+		this.password = password;
 	}
 
-	public String getStudentNumber() {
+	public int getStudentNumber() {
 		return studentNumber;
 	}
 
-	public void setStudentNumber(String studentNumber) {
+	public void setStudentNumber(int studentNumber) {
 		this.studentNumber = studentNumber;
 	}
 
@@ -68,7 +72,7 @@ public class Student {
 	public void setProgram(Program program) {
 		this.program = program;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
