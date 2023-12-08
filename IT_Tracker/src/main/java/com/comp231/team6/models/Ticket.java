@@ -6,6 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ *
+ * @Author Jason Tse
+ */
 @Entity
 @Table(name = "tickets")
 public class Ticket {
