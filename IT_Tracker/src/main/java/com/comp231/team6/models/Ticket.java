@@ -90,4 +90,3 @@ public class Ticket {
                 ", createdBy='" + createdBy + '\'' +
                 '}';
     }
-}
