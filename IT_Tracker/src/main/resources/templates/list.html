@@ -2,23 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Ticket List</title>
+    <link href="/css/pico.min.css" rel="stylesheet">
 </head>
+<header>
+        <nav>
+            <a href="/tickets">View Tickets</a>
+            <a href="/">Create Ticket</a>
+        </nav>
+</header>
 <body>
     <h2>Ticket List</h2>
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Title</th>
                 <th>Description</th>
-                <!-- Add other necessary columns -->
+                <th>Created On</th>
+                <th>Status</th>
+                <th>Created By</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="ticket : ${tickets}">
                 <td th:text="${ticket.ticketTitle}"></td>
                 <td th:text="${ticket.ticketDescription}"></td>
-                <td th:text="${ticket.CreatedDate}"></td>
+                <td th:text="${ticket.ticketDate}"></td>
                 <td th:text="${ticket.ticketStatus}"></td>
                 <td th:text="${ticket.ticketCreatedBy}"></td>
             </tr>

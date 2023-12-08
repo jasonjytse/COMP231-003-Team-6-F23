@@ -13,7 +13,8 @@ public class TicketServiceImpl implements TicketService {
     }
 
     public Ticket getTicketById(String id) {
-        return ticketRepository.findById(id).orElse(null);
+        //return ticketRepository.findById(id).orElse(null);
+    	return null;
     }
 
 

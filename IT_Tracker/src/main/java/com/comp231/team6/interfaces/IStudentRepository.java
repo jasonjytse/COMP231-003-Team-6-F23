@@ -1,11 +1,11 @@
-package com.comp231.team6.interfaces;
+// package com.comp231.team6.interfaces;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.comp231.team6.models.Student;
+// import com.comp231.team6.models.Student;
 
-public interface IStudentRepository extends JpaRepository<Integer, Student>{
-	List<Student> findByStudentNumber(int studentnumber);
-}
+// public interface IStudentRepository extends JpaRepository<Student, String>{
+// 	List<Student> findByStudentNumber(int studentnumber);
+// }

@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/pico.min.css" rel="stylesheet">
     <title>Create Ticket</title>
 </head>
 <header>
-    <a href="/tickets">View Tickets</a>
+    <nav>
+        <a href="/tickets">View Tickets</a>
+        <a href="/">Create Ticket</a>
+    </nav>
+
 </header>
 <body>
-<form action="/submit-ticket" method="POST">
+<form action="/" method="POST">
 
     <label for="ticketTitle">Title:</label>
     <input type="text" id="ticketTitle" name="ticketTitle" ><br><br>
@@ -20,10 +25,10 @@
     <label for="ticketCreatedDate">Date:</label>
     <input type="text" id="ticketCreatedDate" name="ticketCreatedDate" ><br><br>
 
-    <label for="ticketStatus">Priority:</label>
+    <label for="ticketStatus">Status:</label>
     <input type="text" id="ticketStatus" name="ticketStatus" ><br><br>
 
-    <label for="ticketCreatedBy">Priority:</label>
+    <label for="ticketCreatedBy">Created By:</label>
     <input type="text" id="ticketCreatedBy" name="ticketCreatedBy" ><br><br>
 
     <input type="submit" value="Submit">

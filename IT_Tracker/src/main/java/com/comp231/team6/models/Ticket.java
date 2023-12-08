@@ -3,7 +3,6 @@ package com.comp231.team6.models;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -14,7 +13,7 @@ public class Ticket {
     @Id
     @Column(name = "ticketid")
     @GeneratedValue
-    private String ticketId;
+    private int ticketId;
 
     @Column(name = "tickettitle")
     private String ticketTitle;
@@ -22,8 +21,8 @@ public class Ticket {
     @Column(name = "ticketdescription")
     private String ticketDescription;
 
-    @Column(name = "ticketcreateddate")
-    private String ticketCreatedDate;
+    @Column(name = "ticketdate")
+    private String ticketDate;
 
     @Column(name = "ticketstatus")
     private String ticketStatus;
@@ -39,17 +38,17 @@ public class Ticket {
     public Ticket(String title, String description, String createdDate, String status, String createdBy) {
         this.ticketTitle = title;
         this.ticketDescription = description;
-        this.ticketCreatedDate= createdDate;
+        this.ticketDate= createdDate;
         this.ticketStatus = status;
         this.ticketCreatedBy = createdBy;
     }
 
     // Getters and Setters
-    public String getTicketId() {
+    public int getTicketId() {
         return ticketId;
     }
 
-    public void setTicketId(String id) {
+    public void setTicketId(int id) {
         this.ticketId = id;
     }
 
@@ -69,12 +68,12 @@ public class Ticket {
         this.ticketDescription = description;
     }
 
-    public String getCreatedDateTime() {
-        return ticketCreatedDate;
+    public String getTicketDate() {
+        return ticketDate;
     }
 
-    public void setCreatedDateTime(String createdDateTime) {
-        this.ticketCreatedDate = createdDateTime;
+    public void setTicketDate(String createdDate) {
+        this.ticketDate = createdDate;
     }
 
     public String getTicketStatus() {
@@ -101,7 +100,7 @@ public class Ticket {
                 "id=" + ticketId +
                 ", title='" + ticketTitle + '\'' +
                 ", description='" + ticketDescription + '\'' +
-                ", createdDateTime=" + ticketCreatedDate +
+                ", createdDateTime=" + ticketDate +
                 ", status='" + ticketStatus + '\'' +
                 ", createdBy='" + ticketCreatedBy + '\'' +
                 '}';
