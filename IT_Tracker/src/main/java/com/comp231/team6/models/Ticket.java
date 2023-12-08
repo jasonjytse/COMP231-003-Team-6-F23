@@ -1,80 +1,96 @@
 package com.comp231.team6.models;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-import java.time.LocalDateTime;
-
-@EntityScan
+@Entity
+@Table(name = "tickets")
 public class Ticket {
-    
-    // Fields
-    private String id;
-    private String title;
-    private String description;
-    private LocalDateTime createdDateTime;
-    private String status;
-    private String createdBy;
+
+    @Id
+    @Column(name = "ticketid")
+    @GeneratedValue
+    private String ticketId;
+
+    @Column(name = "tickettitle")
+    private String ticketTitle;
+
+    @Column(name = "ticketdescription")
+    private String ticketDescription;
+
+    @Column(name = "ticketcreateddate")
+    private String ticketCreatedDate;
+
+    @Column(name = "ticketstatus")
+    private String ticketStatus;
+
+    @Column(name = "ticketcreatedby")
+    private String ticketCreatedBy;
 
     // Default constructor required by JPA
     public Ticket() {
     }
 
     // Constructor with title, description, date/time, status, and creator
-    public Ticket(String title, String description, LocalDateTime createdDateTime, String status, String createdBy) {
-        this.title = title;
-        this.description = description;
-        this.createdDateTime = createdDateTime;
-        this.status = status;
-        this.createdBy = createdBy;
+    public Ticket(String title, String description, String createdDate, String status, String createdBy) {
+        this.ticketTitle = title;
+        this.ticketDescription = description;
+        this.ticketCreatedDate= createdDate;
+        this.ticketStatus = status;
+        this.ticketCreatedBy = createdBy;
     }
 
     // Getters and Setters
-    public String getId() {
-        return id;
+    public String getTicketId() {
+        return ticketId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setTicketId(String id) {
+        this.ticketId = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTicketTitle() {
+        return ticketTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTicketTitle(String title) {
+        this.ticketTitle = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTicketDescription() {
+        return ticketDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTicketDescription(String description) {
+        this.ticketDescription = description;
     }
 
-    public LocalDateTime getCreatedDateTime() {
-        return createdDateTime;
+    public String getCreatedDateTime() {
+        return ticketCreatedDate;
     }
 
-    public void setCreatedDateTime(LocalDateTime createdDateTime) {
-        this.createdDateTime = createdDateTime;
+    public void setCreatedDateTime(String createdDateTime) {
+        this.ticketCreatedDate = createdDateTime;
     }
 
-    public String getStatus() {
-        return status;
+    public String getTicketStatus() {
+        return ticketStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setTicketStatus(String status) {
+        this.ticketStatus = status;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
+    public String getTicketCreatedBy() {
+        return ticketCreatedBy;
     }
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
+    public void setTicketCreatedBy(String createdBy) {
+        this.ticketCreatedBy = createdBy;
     }
 
     // You might want to override equals() and hashCode() as well, especially if you're using these objects in collections.
@@ -82,11 +98,12 @@ public class Ticket {
     @Override
     public String toString() {
         return "Ticket{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", createdDateTime=" + createdDateTime +
-                ", status='" + status + '\'' +
-                ", createdBy='" + createdBy + '\'' +
+                "id=" + ticketId +
+                ", title='" + ticketTitle + '\'' +
+                ", description='" + ticketDescription + '\'' +
+                ", createdDateTime=" + ticketCreatedDate +
+                ", status='" + ticketStatus + '\'' +
+                ", createdBy='" + ticketCreatedBy + '\'' +
                 '}';
     }
+}

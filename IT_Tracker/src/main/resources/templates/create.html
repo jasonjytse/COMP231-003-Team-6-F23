@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket</title>
+</head>
+<header>
+    <a href="/tickets">View Tickets</a>
+</header>
+<body>
+<form action="/submit-ticket" method="POST">
+
+    <label for="ticketTitle">Title:</label>
+    <input type="text" id="ticketTitle" name="ticketTitle" ><br><br>
+
+    <label for="ticketDescription">Description:</label><br>
+    <textarea id="ticketDescription" name="ticketDescription" rows="4" cols="50" required></textarea><br><br>
+
+    <label for="ticketCreatedDate">Date:</label>
+    <input type="text" id="ticketCreatedDate" name="ticketCreatedDate" ><br><br>
+
+    <label for="ticketStatus">Priority:</label>
+    <input type="text" id="ticketStatus" name="ticketStatus" ><br><br>
+
+    <label for="ticketCreatedBy">Priority:</label>
+    <input type="text" id="ticketCreatedBy" name="ticketCreatedBy" ><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>

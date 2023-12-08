@@ -16,13 +16,11 @@
         </thead>
         <tbody>
             <tr th:each="ticket : ${tickets}">
-                <td th:text="${ticket.id}"></td>
-                <td th:text="${ticket.title}"></td>
-                <td th:text="${ticket.description}"></td>
-                <td th:text="${ticket.status}"></td>
-                <td th:text="${ticket.date}"></td>
-                <td th:text="${ticket.time}"></td>
-                <!-- to add other necessary columns -->
+                <td th:text="${ticket.ticketTitle}"></td>
+                <td th:text="${ticket.ticketDescription}"></td>
+                <td th:text="${ticket.CreatedDate}"></td>
+                <td th:text="${ticket.ticketStatus}"></td>
+                <td th:text="${ticket.ticketCreatedBy}"></td>
             </tr>
         </tbody>
     </table>
