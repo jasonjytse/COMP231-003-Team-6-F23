@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Jason Tse -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="/css/pico.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<form action="/" method="POST">
+    <label for="studentNumber">Student Number:</label>
+    <input type="text" id="studentNumber" name="studentNumber" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <input type="submit" value="Login">
+</form>
+
+<button type="button" onclick="location.href='/signup'">Signup</button>
+<button type="button" onclick="location.href='/ticket'">Create Ticket</button>
+<button type="button" onclick="location.href='/ticket/retrieve'">Retrieve Ticket</button>
+
+
+
+
+</body>
+</html>
