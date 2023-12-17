@@ -2,7 +2,6 @@ package com.comp231.team6.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -13,7 +12,6 @@ public class Student {
 
 	@Id
 	@Column(name = "studentnumber")
-	@GeneratedValue
 	private int studentNumber;
 
 	@Column(name = "password")
